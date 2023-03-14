@@ -3,7 +3,7 @@
   become: true
   gather_facts: no
   vars:
-    user_name: mmonk33
+    user_name: root
   tasks:
     - name: Install required system packages
       apt:
@@ -17,7 +17,7 @@
           - python3-setuptools
         state: latest
         update_cache: yes
-    - name: "Add Docker’s official GPG key"
+    - name: Add Docker’s official GPG key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
