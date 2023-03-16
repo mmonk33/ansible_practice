@@ -1,0 +1,14 @@
+---
+- hosts: remote
+  user: mmmonk33
+  become: true
+  gather_facts: no
+
+  roles:
+  - role: vsftpd
+    ftp_server_banner: "Welcome to vsFTPd server"
+    users:
+      - name: mmonk33
+        state: present
+        comment: "FTP user"
+        password: "$6$.Vpnz9wHRyfhOzLp$V9OUkuMaafooAe9684aOXo/y4quTp8wTVa9w6PpVC2upJVQIE0FrdMqB6zZQ5eCMMELSJr2DGYBpQFG/7Q54L1"
